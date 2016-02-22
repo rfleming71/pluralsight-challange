@@ -118,7 +118,7 @@
             {
                 Text = model.Text,
                 Answer = model.Answer,
-                Distractors = model.Distractors,
+                Distractors = model.Distractors.Where(x => !string.IsNullOrWhiteSpace(x)).Select(x => x.Trim()).ToArray(), // Remove empty strings or null strings
             };
         }
 
