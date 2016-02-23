@@ -1,6 +1,6 @@
 ﻿var AllQuestionsView = Backbone.View.extend({
     events: {
-        "click tr": "questionRowClick"
+        "click tbody tr": "questionRowClick"
     },
     initialize: function (options) {
         this.collection = new QuestionCollection({ url: options.url });
