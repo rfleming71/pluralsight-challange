@@ -17,6 +17,7 @@
         else {
             this.model.clear().set(QuestionModel.defaults);
         }
+        this.clearValidation();
         this.$el.show();
     },
     cleanupDistractors: function(ev) {
@@ -59,6 +60,15 @@
 
             return memo + value;
         }, "");
+    },
+    clearValidation: function () {
+        this.$el.find(".has-error").removeClass("has-error");
+
+        var $feedback = this.$el.find(".form-control-feedback");
+        $feedback.removeClass("glyphicon-warning-sign").removeClass("glyphicon-remove").removeClass("glyphicon-ok");
+
+        this.$el.find(".has-success").removeClass("has-success");
+        this.$el.find(".help-block").html("");
     },
     render: function () {
         this.$el.find("#questionText").val(this.model.get("Text"));
