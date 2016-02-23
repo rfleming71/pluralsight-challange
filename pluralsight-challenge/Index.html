@@ -7,6 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="Content/jqGrid/5.0.2/css/ui.jqgrid.css" />
+    <link rel="stylesheet" href="Content/jqGrid/5.0.2/css/ui.jqgrid-bootstrap.css" />
+    <link rel="stylesheet" href="Content/jqGrid/5.0.2/css/ui.jqgrid-bootstrap-ui.css" />
+    <link rel="stylesheet" href="Content/jquery-ui/1.11.4/jquery-ui.css" />
+
+
     <style type="text/css">
         body {
           padding-top: 50px;
@@ -40,18 +47,10 @@
 
     <div class="container">
         <div id="allQuestions" class="main-container">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Question</th>
-                        <th>Answer</th>
-                        <th>Distractors</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                </tbody>
+            <table id="questionTable">
             </table>
+            <div id="pager">
+            </div>
         </div>
         <div id="singleQuestion" class="main-container col-md-6">
             <form role="form" data-toggle="validator">
@@ -94,6 +93,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js" type="text/javascript"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="Content/jqGrid/5.0.2/js/i18n/grid.locale-en.js"></script>
+    <script src="Content/jqGrid/5.0.2/js/jquery.jqGrid.min.js"></script>
     <script src="/Scripts/validator.min.js"></script>
     <script src="/Scripts/BackboneModels.js"></script>
     <script src="/Scripts/SingleQuestionView.js"></script>
