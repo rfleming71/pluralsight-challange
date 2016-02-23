@@ -124,6 +124,7 @@
 
         private void ValidateQuestion(Question question)
         {
+            // ToDo: These exceptions should be HttpResponseException
             if (string.IsNullOrWhiteSpace(question.Text))
             {
                 throw new ArgumentException("Question text must not be null or whitespace");

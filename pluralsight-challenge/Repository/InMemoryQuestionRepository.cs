@@ -103,7 +103,7 @@
                 QuestionId = question.QuestionId,
                 Text = question.Text,
                 Answer = question.Answer,
-                Distractors = question.Distractors.ToArray(),
+                Distractors = (question.Distractors ?? new string[0]).ToArray(),
             };
         }
     }

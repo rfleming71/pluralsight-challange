@@ -26,10 +26,20 @@
                     throw new Exception(string.Format("Invalid line: {0}", line));
                 }
 
-                string[] distractors = parts[2].Split(',').Select(x => x.Trim()).ToArray();
+                if (string.IsNullOrWhiteSpace(parts[0]))
+                {
+                    throw new Exception(string.Format("Missing question text: {0}", line));
+                }
+
+                if (string.IsNullOrWhiteSpace(parts[1]))
+                {
+                    throw new Exception(string.Format("Missing Answer: {0}", line));
+                }
+
+                string[] distractors = parts[2].Split(',').Where(x => !string.IsNullOrWhiteSpace(x)).Select(x => x.Trim()).ToArray();
                 if (distractors.Length == 0)
                 {
-                    throw new Exception(string.Format("Invalid line: {0}", line));
+                    throw new Exception(string.Format("Missing distractors: {0}", line));
                 }
 
                 questions.Add(new Question()
